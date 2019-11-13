@@ -1,48 +1,30 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import axios from "axios";
+import Movie from "./Movie";
 
-const pokeball = [
-  {
-    id: 1,
-    name: "bugi",
-    image: "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
-  },
-  {
-    id: 2,
-    name: "isang",
-    image: "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
-  },
-  {
-    id: 3,
-    name: "pairl",
-    image: "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: []
+  };
+  getMovies = async () => {
+    const { data: { data: { movies } } } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort by rating");
+    this.setState({ movies, isLoading: false });
+  };
+  componentDidMount() {
+    this.getMovies();
   }
-];
-
-function Pokemon({ name, pic, rating }) {
-  return (
-    <div>
-      <h3>나와라 {name}</h3>
-      <h4>{rating} / 5</h4>
-      <img src={pic} alt={name} width="100px"></img>
+  render() {
+    const { isLoading, movies } = this.state;
+    return (<div>{isLoading ? "Loading..." : movies.map(movie => {
+      return (<Movie id={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image}
+      />
+      );
+    })}
     </div>
-  );
-}
+    );
+  }
 
-Pokemon.propTypes = {
-  name: PropTypes.string.isRequired,
-  pic: PropTypes.string.isRequired,
-  rating: PropTypes.number
-};
-
-function App() {
-  return (
-    <div>
-      {pokeball.map(mon => (
-        <Pokemon key={mon.id} name={mon.name} pic={mon.image} rating={mon.rating} />
-      ))}
-    </div>
-  );
 }
 
 export default App;
