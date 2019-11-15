@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/nomadcorder-react-intro/static/css/main.5721af45.chunk.css",
+    "main.js": "/nomadcorder-react-intro/static/js/main.02e56378.chunk.js",
+    "main.js.map": "/nomadcorder-react-intro/static/js/main.02e56378.chunk.js.map",
+    "runtime-main.js": "/nomadcorder-react-intro/static/js/runtime-main.dc32636e.js",
+    "runtime-main.js.map": "/nomadcorder-react-intro/static/js/runtime-main.dc32636e.js.map",
+    "static/js/2.9a2affb7.chunk.js": "/nomadcorder-react-intro/static/js/2.9a2affb7.chunk.js",
+    "static/js/2.9a2affb7.chunk.js.map": "/nomadcorder-react-intro/static/js/2.9a2affb7.chunk.js.map",
+    "index.html": "/nomadcorder-react-intro/index.html",
+    "precache-manifest.911bf02379eb22c75685023dd4466342.js": "/nomadcorder-react-intro/precache-manifest.911bf02379eb22c75685023dd4466342.js",
+    "service-worker.js": "/nomadcorder-react-intro/service-worker.js",
+    "static/css/main.5721af45.chunk.css.map": "/nomadcorder-react-intro/static/css/main.5721af45.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dc32636e.js",
+    "static/js/2.9a2affb7.chunk.js",
+    "static/css/main.5721af45.chunk.css",
+    "static/js/main.02e56378.chunk.js"
+  ]
+}
